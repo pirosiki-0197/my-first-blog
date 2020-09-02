@@ -4,9 +4,7 @@
     <h2>編集する</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <div class="btns">
-          <button type="submit" class="delete btn btn-default">削除</button>
-          <button type="submit" class="save btn btn-default">保存</button>
-        </div>
+          <button type="submit" class="save btn btn-default" name="save">保存</button>
+          <button type="submit" class="del btn btn-default" name="del">削除</button>
     </form>
 {% endblock %}

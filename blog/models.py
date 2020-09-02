@@ -16,3 +16,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Creater(models.Model):
+    creater_name=models.CharField(max_length=20)
+    creater_pass=models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.creater_name

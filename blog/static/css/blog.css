@@ -48,3 +48,12 @@ h1, h2, h3, h4 {
 .post h2 a, .post h2 a:visited {
     color: #000000;
 }
+
+.signup {
+    float:right;
+    color:white;
+}
+
+.textbox {
+    margin-bottom:20px;
+}

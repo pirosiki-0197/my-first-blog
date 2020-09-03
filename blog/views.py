@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from .models import Post,Creater
 from django.utils import timezone
-from .forms import PostForm,SignupForm
+from .forms import PostForm,SignupForm,Make_account
 
 # Create your views here.
 def post_list(request):

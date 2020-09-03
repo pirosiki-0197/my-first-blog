@@ -18,8 +18,8 @@ class Post(models.Model):
         return self.title
 
 class Creater(models.Model):
-    creater_name=models.CharField(max_length=20)
-    creater_pass=models.CharField(max_length=20)
+    username=models.CharField(max_length=20)
+    password=models.CharField(max_length=20)
 
     def __str__(self):
-        return self.creater_name
+        return self.username

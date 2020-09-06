@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from .models import Post,Creater
 from django.utils import timezone
-from .forms import PostForm,SignupForm,Make_account
+from .forms import PostForm,SignupForm
 
 # Create your views here.
 def post_list(request):
@@ -44,5 +44,12 @@ def post_edit(request, pk):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 def signup(request):
-    signupform=SignupForm()
+    if request.method=='POST':
+        signupform=SignupForm(request.POST)
+        if signupform.is_valid():
+            post=signupform.save(commit=False)
+            post.save()
+            return redirect('post_list')
+    else:
+        signupform=SignupForm()
     return render(request,'blog/signup.html',{'signupform':signupform})
